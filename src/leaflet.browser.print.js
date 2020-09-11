@@ -522,7 +522,9 @@ L.Control.BrowserPrint = L.Control.extend({
 		options.scrollWheelZoom = false;
 		options.tap = false;
 		options.touchZoom = false;
-		var overlayMap = L.map(id, options);
+    var overlayMap = L.map(id, options);
+
+    L.control.scale({ imperial: false }).addTo(overlayMap);
 
 		if (printLayer) {
 			printLayer.addTo(overlayMap);
